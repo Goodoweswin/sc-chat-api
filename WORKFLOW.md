@@ -49,7 +49,19 @@ npx wrangler kv:namespace create "RATE_LIMIT"
 # 记录输出的 id，填入 wrangler.toml
 ```
 
-### 1.3 前端集成注意事项
+### 1.3 配置安全密钥 (Secrets)
+**重要**：API 无法工作，除非你设置了以下密钥：
+```bash
+# 1. 设置访问密码 (前端聊天窗口用的密码)
+npx wrangler secret put ACCESS_PASSWORD
+# 输入: 123456 (或你想要的密码)
+
+# 2. 设置 Google Gemini API Key
+npx wrangler secret put GEMINI_API_KEY
+# 输入: AIzaSy... (你的 Gemini Key)
+```
+
+### 1.4 前端集成注意事项
 - **CORS**: Worker 已配置 CORS 头，允许前端跨域调用。
 - **URL**: 部署后获得的 URL (如 `https://sc-chat-api.xxx.workers.dev`) 必须填入前端 `src/components/chat-widget.html` 的 `API_ENDPOINT` 变量中。
 - **Auth**: 前端通过 Basic Auth 传递密码，确保 Worker 中的 `ACCESS_PASSWORD` 环境变量已设置。
