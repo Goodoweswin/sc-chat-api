@@ -1,0 +1,18 @@
+name = "sc-chat-api"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# KV Namespaces (You need to replace id with your actual KV IDs)
+# Run: npx wrangler kv:namespace create "RATE_LIMIT"
+# Run: npx wrangler kv:namespace create "KNOWLEDGE_INDEX"
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "f99c30b191b84411ba94b73b688af2ae"
+
+[[kv_namespaces]]
+binding = "KNOWLEDGE_INDEX"
+id = "d401e3d502f846ffae122792899a2f3e"
+
+[vars]
+# ACCESS_PASSWORD will be set via `wrangler secret put ACCESS_PASSWORD` for security
+# GEMINI_API_KEY will be set via `wrangler secret put GEMINI_API_KEY`
