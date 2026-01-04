@@ -1,6 +1,6 @@
 # Workers AI API 变更日志
 
-## [1.0.0] - 2025-01-22
+## [1.0.0] - 2026-01-04
 ### 新增
 - 基础AI聊天功能（POST /api/chat）
 - HTTP Basic Auth密码保护
